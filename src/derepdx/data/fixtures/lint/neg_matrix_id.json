@@ -1,0 +1,17 @@
+{
+  "matrices": [
+    {
+      "id": "tierA"
+    },
+    {
+      "id": "tierB"
+    }
+  ],
+  "comparisons": [
+    {
+      "name": "tierA_vs_tierA_floor",
+      "matrix_id": "tierA",
+      "noise_floor_matrix_id": "tierA"
+    }
+  ]
+}

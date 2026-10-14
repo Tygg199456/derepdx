@@ -1,0 +1,52 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "derepdx"
+version = "0.1.0"
+description = "Diagnostics for SNP-distance dereplication blind to structural variation"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Guangwei Tong" }]
+keywords = [
+  "dereplication",
+  "structural variation",
+  "SNP distance",
+  "reference bias",
+  "comparative genomics",
+  "Yersinia pestis",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+dependencies = ["numpy>=1.24", "pandas>=2.0", "scipy>=1.11"]
+
+[project.urls]
+Homepage = "https://github.com/Tygg199456/derepdx"
+Issues = "https://github.com/Tygg199456/derepdx/issues"
+
+[project.scripts]
+derepdx = "derepdx.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-cov", "ruff"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/derepdx"]
+
+[tool.pytest.ini_options]
+markers = ["paper: regression against the paper1 archive (needs PAPER1_RESULTS)"]
+addopts = "-ra --strict-markers"
+
+[tool.ruff]
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

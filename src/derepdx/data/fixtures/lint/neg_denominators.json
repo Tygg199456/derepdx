@@ -1,0 +1,28 @@
+{
+  "claim_id": "pgm_arm",
+  "proportions": [
+    {
+      "name": "arm1_pct",
+      "numerator_set": [
+        "a",
+        "b"
+      ],
+      "denominator_set": [
+        "a",
+        "b",
+        "c"
+      ]
+    },
+    {
+      "name": "arm2_pct",
+      "numerator_set": [
+        "c"
+      ],
+      "denominator_set": [
+        "a",
+        "b",
+        "c"
+      ]
+    }
+  ]
+}

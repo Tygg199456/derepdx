@@ -1,0 +1,8 @@
+{
+  "expected": {
+    "closed_genomes": 206
+  },
+  "observed": {
+    "closed_genomes": 206
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "title": "derepdx: diagnostics for SNP-distance dereplication blind to structural variation",
+  "description": "<p><code>derepdx</code> implements the nine runnable diagnostics of Table 3 of the companion manuscript as a command-line tool. Dereplication by SNP distance assumes that close in SNPs means the same organism; that assumption fails silently when a large deletion (which contributes exactly zero to a jointly-called-site distance), a reference-based quality metric used as a filter, or a reference-relative absence of unknown polarity changes the composition of a dereplicated set.</p><p>Every command takes tables in and returns a verdict out; the tool never reads BAM/VCF/FASTA, so it installs with pip and runs on a laptop. It ships its own small test fixtures and a <code>derepdx demo</code> that reproduces the full positive/negative matrix in one run.</p><p>The tools report; the human decides. Two diagnostics (polarity and check-qc-covariate) end in a judgement call.</p>",
+  "upload_type": "software",
+  "version": "v0.1.0",
+  "license": "MIT",
+  "access_right": "open",
+  "creators": [
+    {
+      "name": "Tong, Guangwei"
+    }
+  ],
+  "keywords": [
+    "dereplication",
+    "structural variation",
+    "SNP distance",
+    "reference bias",
+    "comparative genomics",
+    "Yersinia pestis",
+    "reproducible research"
+  ],
+  "related_identifiers": [
+    {
+      "relation": "isSupplementTo",
+      "identifier": "10.5281/zenodo.23353814",
+      "resource_type": "software"
+    }
+  ]
+}
