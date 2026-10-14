@@ -1,5 +1,7 @@
 # derepdx
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23354193.svg)](https://doi.org/10.5281/zenodo.23354193)
+
 Diagnostics for SNP-distance dereplication that is blind to structural variation.
 
 Dereplication by SNP distance assumes that "close in SNPs" means "same organism".
@@ -78,8 +80,9 @@ Details, input schemas and worked examples: [`docs/table3_mapping.md`](docs/tabl
 
 ## Citation
 
-If you use `derepdx`, please cite the companion manuscript and the archived release; see
-[`CITATION.cff`](CITATION.cff).
+If you use `derepdx`, please cite the archived release (concept DOI
+[10.5281/zenodo.23354193](https://doi.org/10.5281/zenodo.23354193); version v0.1.0 is
+`10.5281/zenodo.23354194`) and the companion manuscript; see [`CITATION.cff`](CITATION.cff).
 
 ## License
 

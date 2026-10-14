@@ -4,6 +4,7 @@ title: "derepdx: diagnostics for SNP-distance dereplication blind to structural 
 type: software
 version: "0.1.0"
 license: MIT
+doi: 10.5281/zenodo.23354193
 repository-code: "https://github.com/Tygg199456/derepdx"
 keywords:
   - dereplication
