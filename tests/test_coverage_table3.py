@@ -28,9 +28,8 @@ def test_every_row_has_a_command_and_both_sides():
 
 
 def test_row_five_has_its_third_state():
-    from derepdx.checks import polarity
     classes = set()
-    for row, kind, fn in fixtures.cases():
+    for row, _kind, fn in fixtures.cases():
         if row == 5:
             classes.add(fn().classification)
     for fn in fixtures.ambiguous_cases():

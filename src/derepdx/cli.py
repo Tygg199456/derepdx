@@ -11,7 +11,16 @@ import json
 import sys
 
 from . import __version__, fixtures, io
-from .checks import REGISTRY, background, concordance, counts, length, polarity, profile, qc_covariate
+from .checks import (
+    REGISTRY,
+    background,
+    concordance,
+    counts,
+    length,
+    polarity,
+    profile,
+    qc_covariate,
+)
 from .lint import denominators, matrix_id
 from .result import CheckResult
 
@@ -94,8 +103,8 @@ def dispatch(args) -> int:
         return _emit(length.run(io.read_table(args.metadata, ["accession", "strain", "total_bp"]),
                                 args.max_delta_bp), args.json)
     if c == "check-concordance":
-        return _emit(concordance.run(io.read_matrix(args.matrix),
-                                     io.read_table(args.profiles, ["accession", "chromosome_blocks"]),
+        profiles = io.read_table(args.profiles, ["accession", "chromosome_blocks"])
+        return _emit(concordance.run(io.read_matrix(args.matrix), profiles,
                                      t=args.t, mode=args.constraint), args.json)
     if c == "check-profile":
         return _emit(profile.run(io.read_table(args.profiles, ["accession", "replicon", "state"])),
@@ -142,7 +151,8 @@ def _demo(as_json: bool) -> int:
             by_row.setdefault(r["row"], {})[r["kind"]] = cell
         for row in sorted(by_row):
             d = by_row[row]
-            print(f"{row:>3}  {REGISTRY[row].NAME:<20} {d.get('pos', '-'):<9} {d.get('neg', '-'):<9}")
+            print(f"{row:>3}  {REGISTRY[row].NAME:<20}"
+                  f" {d.get('pos', '-'):<9} {d.get('neg', '-'):<9}")
         print("\npositive fixtures must FAIL, negative fixtures must PASS, "
               "row 5 also prints the AMBIGUOUS class for its amb_ fixture.")
     bad = [r for r in results if (r["kind"] == "neg" and not r["ok"])

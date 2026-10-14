@@ -31,8 +31,10 @@ def cases():
         (1, "pos", lambda: length.run(io.read_table(
             fixture("length", "pos_same_strain_107kb.tsv"),
             ["accession", "strain", "total_bp"]))),
-        (2, "neg", lambda: denominators.run(io.read_json(fixture("lint", "neg_denominators.json")))),
-        (2, "pos", lambda: denominators.run(io.read_json(fixture("lint", "pos_denominators.json")))),
+        (2, "neg", lambda: denominators.run(
+            io.read_json(fixture("lint", "neg_denominators.json")))),
+        (2, "pos", lambda: denominators.run(
+            io.read_json(fixture("lint", "pos_denominators.json")))),
         (3, "neg", lambda: concordance.run(
             io.read_matrix(fixture("concordance", "dist_8x8.tsv")),
             io.read_table(fixture("concordance", "neg_concordant.tsv"),

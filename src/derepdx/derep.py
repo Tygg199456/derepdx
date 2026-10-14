@@ -61,7 +61,8 @@ def profiles_discordant(pa: pd.Series, pb: pd.Series, mode: str = "conservative"
     if mode == "full":
         return (_blocks(pa.get("chromosome_blocks", "")) != _blocks(pb.get("chromosome_blocks", ""))
                 or any(pa.get(k) != pb.get(k) for k in PLASMID_STATES))
-    chrom_diff = _blocks(pa.get("chromosome_blocks", "")) != _blocks(pb.get("chromosome_blocks", ""))
+    chrom_diff = (_blocks(pa.get("chromosome_blocks", ""))
+                  != _blocks(pb.get("chromosome_blocks", "")))
     if mode == "threestate":
         if chrom_diff:
             return True

@@ -1,6 +1,6 @@
 from derepdx import io
 from derepdx.checks import polarity
-from derepdx.fixtures import fixture, ambiguous_cases
+from derepdx.fixtures import ambiguous_cases, fixture
 
 
 def _df(name):

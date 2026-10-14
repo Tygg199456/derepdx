@@ -108,11 +108,11 @@ def build() -> None:
     tracking = 99.0 - 0.05 * dist + rng.normal(0, 0.4, n)      # r ~ -0.99
     independent = 97.5 + rng.normal(0, 0.8, n)                 # r ~ 0
     rows = ["accession\tmetric\tdistance\n"]
-    for i, (m, d) in enumerate(zip(tracking, dist), 1):
+    for i, (m, d) in enumerate(zip(tracking, dist, strict=True), 1):
         rows.append(f"G{i:03d}\t{m:.3f}\t{d:.1f}\n")
     w("qc/pos_metric_tracks_distance.tsv", "".join(rows))
     rows = ["accession\tmetric\tdistance\n"]
-    for i, (m, d) in enumerate(zip(independent, dist), 1):
+    for i, (m, d) in enumerate(zip(independent, dist, strict=True), 1):
         rows.append(f"G{i:03d}\t{m:.3f}\t{d:.1f}\n")
     w("qc/neg_metric_independent.tsv", "".join(rows))
 
